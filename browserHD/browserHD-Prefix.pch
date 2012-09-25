@@ -11,4 +11,16 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+
+
 #endif
+
+#define RCViewAutoresizingALL   UIViewAutoresizingFlexibleLeftMargin|\
+                                UIViewAutoresizingFlexibleWidth|\
+                                UIViewAutoresizingFlexibleRightMargin|\
+                                UIViewAutoresizingFlexibleTopMargin|\
+                                UIViewAutoresizingFlexibleHeight|\
+                                UIViewAutoresizingFlexibleBottomMargin
+
+#define RCViewAutoresizingInternal  UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight

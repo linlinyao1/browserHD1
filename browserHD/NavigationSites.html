@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>导航</title>
+<style>
+/*
+<meta content="initial-scale=1.0, width=device-width, minimum-scale=0.8, maximum-scale=1.0, user-scalable=yes" name="viewport">
+*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,textarea,p,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0}
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,"Microsoft Yahei";}
+a{text-decoration:none;color:#333;}
+
+/*文字排版*/
+.f12{font-size:12px}
+.f14{font-size:14px}
+.f16{font-size:16px}
+.f20{font-size:20px}
+.fb{font-weight:bold}
+.fn{font-weight:normal}
+.t2{text-indent:2em}
+.lh150{line-height:150%}
+.lh180{line-height:180%}
+.lh200{line-height:200%}
+.unl{text-decoration:underline}
+.no_unl{text-decoration:none}
+
+/*定位*/
+.tl{text-align:left}
+.tr{text-align:right}
+.tc{text-align:center}
+.bc{margin-left:auto;margin-right:auto}
+.fl{float:left;display:inline}
+.fr{float:right;display:inline}
+.cb{clear:both}
+.cl{clear:left}
+.cr{clear:right}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{display:inline-block}
+*html clearfix{height:1%}
+.clearfix{display:block}
+.vm{vertical-align:middle}
+.pr{position:relative}
+.pa{position:absolute}
+.abs-right{position:absolute;right:0}
+.zoom{zoom:1}
+.hidden{visibility:hidden}
+.none{display:none}
+
+/*长度高度*/
+.w10{width:10px}
+.w100{width:100px}
+.h50{height:50px}
+
+/*边距*/
+.m10{margin:10px}
+.mt10{margin-top:10px}
+.mb10{margin-bottom:10px}
+.ml10{margin-left:10px}
+.mr10{margin-right:10px}
+.p10{padding:10px}
+.pt10{padding-top:10px}
+.pb10{padding-bottom:10px}
+.pl10{padding-left:10px}
+.pr10{padding-right:10px}
+
+/*颜色*/
+.fc0{color:#c00;}
+.fc1{color:#f60;}
+.fc2{color:#06f;}
+.fc3{color:#f00;}
+.fc4{color:#666;}
+.fc5{color:#999;}
+
+body{width:800px;padding:0 30px;margin:0 auto;}
+body{background:url(images/bg.png);}
+/*==============content==================*/
+.head{height:28px;padding:20px 0;line-height:26px;overflow:hidden;font-size:22px;position:relative;color:#333;}
+.head em a{width:75px;height:26px;position:absolute;top:20px;right:0;text-align:center;display:block;border:1px solid #ababab;background:#f4f4f4;border-radius:3px;font-size:12px;}
+.oftenVisit_content dd{padding-bottom:6px;width:159px;height:134px;background:url(images/oftenListBg.png) no-repeat left bottom;float:left;display:inline;margin-right:54px;margin-bottom:20px;}
+.oftenVisit_content dd:nth-child(4n){margin-right:0;}
+.oftenVisit_content dd:nth-last-child(4),.oftenVisit_content dd:nth-last-child(3),.oftenVisit_content dd:nth-last-child(2),.oftenVisit_content dd:nth-last-child(1){margin-bottom:0;}
+.view{width:157px;height:134px;border:1px solid #dedede;border-radius:5px;display:block;position:relative;}
+.viewImg{width:157px;height:134px;}
+.viewImg img{display:block;width:155px;height:132px;padding:1px;}
+.viewName{position:absolute;left:1px;bottom:1px;height:30px;background:/*url(images/viewNameBg.png)*/#fff;opacity:0.85;line-height:30px;text-align:center;width:155px;font-size:16px;color:#373737;}
+
+.nav_content{font-size:16px;color:#373737;}
+.nav_content dd{margin-bottom:15px;}
+.navTitle{float:left;display:inline;width:70px;height:34px;line-height:32px;}
+.navList,.navList li{float:left;display:inline;}
+.navList li{width:108px;height:32px;border:1px solid #cdced1;border-radius:5px;line-height:30px;text-align:center;margin-right:44px;background:url(images/navListBg.png) repeat-x;}
+.navList li:last-child{margin-right:0;}
+.navList li a{display:block;text-align:center;}
+
+.highSite_content dd{float:left;display:inline;margin-right:77px;margin-bottom:5px;}
+.highSite_content dd:nth-child(6n){margin-right:0;}
+.highSite_content .img{width:69px;height:67px;}
+.highSite_content .name{width:69px;text-align:center;height:35px;line-height:35px;color:#333;}
+</style>
+</head>
+
+<body>
+<div class="highSite">
+	<div class="head">精品网址</div>
+    <div class="highSite_content">
+    	<dl class="clearfix">
+        	<dd>
+            	<div class="img"><a href="http://www.baidu.com/"><img src="images/button_baidu.png" /></a></div>
+                <div class="name">百度</div>
+            </dd>
+            <dd>
+            	<div class="img"><a href="http://ipad.sina.com.cn/"><img src="images/button_sina.png" /></a></div>
+                <div class="name">新浪</div>
+            </dd>
+            <dd>
+            	<div class="img"><a href="http://www.sohu.com/"><img src="images/button_sohu.png" /></a></div>
+                <div class="name">搜狐</div>
+            </dd>
+            <dd>
+            	<div class="img"><a href="http://www.163.com/"><img src="images/button_163.png" /></a></div>
+                <div class="name">网易</div>
+            </dd>
+            <dd>
+            	<div class="img"><a href="http://open.shouji.360.cn/pad.html"><img src="images/button_shouji360.png" /></a></div>
+                <div class="name">应用</div>
+            </dd>
+            <dd>
+            	<div class="img"><a href="http://www.taobao.com/"><img src="images/button_taobao.png" /></a></div>
+                <div class="name">淘宝网</div>
+            </dd>
+            <dd>
+            	<div class="img"><a href="http://www.ifeng.com/"><img src="images/button_ifeng.png" /></a></div>
+                <div class="name">凤凰网</div>
+            </dd>
+            <dd>
+            	<div class="img"><a href="http://www.renren.com/"><img src="images/button_renren.png" /></a></div>
+                <div class="name">人人网</div>
+            </dd>
+            <dd>
+            	<div class="img"><a href="http://www.kaixin001.com/"><img src="images/button_kaixin001.png" /></a></div>
+                <div class="name">开心网</div>
+            </dd>
+            <dd>
+            	<div class="img"><a href="http://tuan.360.cn/"><img src="images/button_tuan360.png" /></a></div>
+                <div class="name">今日团购</div>
+            </dd>
+            <dd>
+            	<div class="img"><a href="http://v.360.cn/dianying/index.html"><img src="images/button_dianying.png" /></a></div>
+                <div class="name">高清影视</div>
+            </dd>
+            <dd>
+            	<div class="img"><a href="http://cp.360.cn/?a=hd"><img src="images/button_caipiao.png" /></a></div>
+                <div class="name">彩票</div>
+            </dd>
+        </dl>
+    </div>
+</div>
+<div class="nav">
+	<div class="head">分类导航</div>
+    <dl class="nav_content">
+    	<dd class="clearfix">
+        	<div class="navTitle"><a href="http://v.360.cn/dianying/index.html">视频</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://www.tudou.com/">土豆网</a></li>
+                <li><a href="http://www.youku.com/">优酷</a></li>
+                <li><a href="http://www.qiyi.com/">奇艺</a></li>
+                <li><a href="http://tv.sohu.com/">搜狐视频</a></li>
+                <li><a href="http://www.xunlei.com/">迅雷看看</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://xiaoshuo.360.cn/">小说</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://www.qidian.com/">起点中文网</a></li>
+                <li><a href="http://www.readnovel.com/">小说阅读网</a></li>
+                <li><a href="http://www.zongheng.com/">纵横中文网</a></li>
+                <li><a href="http://www.xs8.cn/">言情小说吧</a></li>
+                <li><a href="http://www.xxsy.net/">潇湘书院</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://hao.360.cn/xinwenmeiti.html">新闻</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://ipad.sina.com.cn/">新浪新闻</a></li>
+                <li><a href="http://news.sohu.com/">搜狐新闻</a></li>
+                <li><a href="http://www.huanqiu.com/">环球网</a></li>
+                <li><a href="http://www.zaobao.com/">联合早报</a></li>
+                <li><a href="http://news.ifeng.com/">凤凰新闻</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://hao.360.cn/junshiguofang.html">军事</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://military.china.com/zh_cn/">中华网军事</a></li>
+                <li><a href="http://mil.news.sina.com.cn/">新浪军事</a></li>
+                <li><a href="http://news.ifeng.com/mil/">凤凰军事</a></li>
+                <li><a href="http://www.tiexue.net/">铁血军事</a></li>
+                <li><a href="http://mil.huanqiu.com/">环球军事</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://hao.360.cn/tiyuyundong.html">体育</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://sports.sina.com.cn/">新浪体育</a></li>
+                <li><a href="http://sports.sohu.com/">搜狐体育</a></li>
+                <li><a href="http://sports.163.com/">网易体育</a></li>
+                <li><a href="http://www.titan24.com/">体坛网</a></li>
+                <li><a href="http://sports.cntv.cn/">CCTV-5</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://hao.360.cn/shenghuoxinxi.html">生活</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://www.58.com/">58同城</a></li>
+                <li><a href="http://www.ganji.com/">赶集网</a></li>
+                <li><a href="http://www.dianping.com/">大众点评网</a></li>
+                <li><a href="http://www.ctrip.com/">携程旅行网</a></li>
+                <li><a href="http://www.qunar.com/">去哪儿</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://hao.360.cn/nvxingshishang.html">女性</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://www.rayli.com.cn/">瑞丽女性网</a></li>
+                <li><a href="http://www.pclady.com.cn/">太平洋女性</a></li>
+                <li><a href="http://www.yoka.com/">YOKA时尚网</a></li>
+                <li><a href="http://www.meilishuo.com/">美丽说</a></li>
+                <li><a href="http://www.mogujie.com/">蘑菇街</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://hao.360.cn/shequluntan.html">社区</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://www.tianya.cn/">天涯社区</a></li>
+                <li><a href="http://tieba.baidu.com/index.html">百度贴吧</a></li>
+                <li><a href="http://www.douban.com/">豆瓣</a></li>
+                <li><a href="http://qzone.qq.com/">QQ空间</a></li>
+                <li><a href="http://t.qq.com/">腾讯微博</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://hao.360.cn/qicheqipei.html">汽车</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://www.autohome.com.cn/">汽车之家</a></li>
+                <li><a href="http://www.bitauto.com/">易车网</a></li>
+                <li><a href="http://www.xcar.com.cn/">爱卡汽车网</a></li>
+                <li><a href="http://www.pcauto.com.cn/">太平洋汽车</a></li>
+                <li><a href="http://auto.sina.com.cn/">新浪汽车</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://hao.360.cn/gupiaojijin.html">财经</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://www.eastmoney.com/">东方财富网</a></li>
+                <li><a href="http://www.hexun.com/">和讯财经</a></li>
+                <li><a href="http://www.jrj.com.cn/">金融界</a></li>
+                <li><a href="http://www.cnfol.com/">中金在线</a></li>
+                <li><a href="http://www.stockstar.com/">证券之星</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://tuan.360.cn/">团购</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://www.meituan.com/">美团网</a></li>
+                <li><a href="http://www.lashou.com/">拉手网</a></li>
+                <li><a href="http://www.nuomi.com/">糯米网</a></li>
+                <li><a href="http://www.groupon.cn/">团宝网</a></li>
+                <li><a href="http://www.55tuan.com/">窝窝团</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://mall.360.cn/">购物</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://www.dangdang.com/">当当网</a></li>
+                <li><a href="http://www.360buy.com/">京东商城</a></li>
+                <li><a href="http://www.vancl.com/">凡客诚品</a></li>
+                <li><a href="http://www.amazon.cn/">卓越亚马逊</a></li>
+                <li><a href="http://www.letao.com/">乐淘鞋城</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://hao.360.cn/aiqingjiaoyou.html">交友</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://www.jiayuan.com/">世纪佳缘</a></li>
+                <li><a href="http://www.zhenai.com/">珍爱网</a></li>
+                <li><a href="http://www.baihe.com/">百合网</a></li>
+                <li><a href="http://www.pengyou.com/">朋友网</a></li>
+                <li><a href="http://www.ipart.cn/">爱情公寓</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://hao.360.cn/mianfeiziyuan.html">邮箱</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://ipad.mail.163.com">163邮箱</a></li>
+                <li><a href="http://ipad.mail.126.com">126邮箱</a></li>
+                <li><a href="http://mail.cn.yahoo.com/">雅虎邮箱</a></li>
+                <li><a href="http://mail.qq.com/">QQ邮箱</a></li>
+                <li><a href="http://mail.sina.com.cn/?dev=pc">新浪邮箱</a></li>
+            </ul>
+        </dd>
+        <dd class="clearfix">
+        	<div class="navTitle"><a href="http://tools.360.cn/">查询</a></div>
+            <ul class="navList clearfix">
+            	<li><a href="http://tq.360.cn/">天气预报</a></li>
+                <li><a href="http://hao.360.cn/huoche_new.html">火车时刻</a></li>
+                <li><a href="http://hao.360.cn/kuaidi.html">快递查询</a></li>
+                <li><a href="http://cp.360.cn/kj/kaijiang/?a=hd">彩票开奖</a></li>
+                <li><a href="http://hao.360.cn/weizhang.html">车辆违章</a></li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+</body>
+</html>

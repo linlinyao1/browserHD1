@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="11E53" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Bookmark" representedClassName="Bookmark" syncable="YES">
+        <attribute name="createDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="folder" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="bookmarks" inverseEntity="Folder" syncable="YES"/>
+    </entity>
+    <entity name="Folder" representedClassName="Folder" syncable="YES">
+        <attribute name="createDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="bookmarks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bookmark" inverseName="folder" inverseEntity="Bookmark" syncable="YES"/>
+        <relationship name="child" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Folder" inverseName="parent" inverseEntity="Folder" syncable="YES"/>
+        <relationship name="parent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="child" inverseEntity="Folder" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Bookmark" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Folder" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

@@ -9,6 +9,9 @@
 #import "RCAppDelegate.h"
 
 #import "RCViewController.h"
+#import "RCRecordData.h"
+#import "CoreDataManager+BookMark.h"
+#import "MobClick.h"
 
 @implementation RCAppDelegate
 
@@ -19,6 +22,33 @@
     self.viewController = [[RCViewController alloc] initWithNibName:@"RCViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    
+    //setup screen shot cache clear
+//    5056b26e52701527fe000074
+    [MobClick startWithAppkey:@"5056b26e52701527fe000074" reportPolicy:REALTIME channelId:nil];
+    [MobClick checkUpdate];
+//    [[MobClick class] performSelector:@selector(checkUpdate) withObject:nil afterDelay:1];
+
+    
+    [[RCRecordData class] performSelectorInBackground:@selector(clearImageCaches) withObject:nil];
+    
+    
+    BOOL notFirstLoad = [[NSUserDefaults standardUserDefaults] boolForKey:@"notFirstLoad"];
+    if (!notFirstLoad) {
+        [RCRecordData prepareDefaultData];
+        
+        Folder* folder = [[CoreDataManager defaultManager] creatFolderWithTitle:@"我的收藏夹" Unique:[NSNumber numberWithInt:0] Parent:nil];
+        if (!folder) {
+            NSLog(@"error creat default Folder");
+        }else{
+
+        }
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"notFirstLoad"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+    }
+    
     return YES;
 }
 

@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RCHomePage.h"
 
 @interface RCViewController : UIViewController
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *DashBoardFav;
 
+//Home Page
+@property (nonatomic, strong) RCHomePage *homePage;
+
+
+-(void)loadUrlforCurrentTab:(NSURL*)url;
+
+-(void)reloadHomePage;
 @end

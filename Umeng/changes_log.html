@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;}
+body {
+	font:13.34px helvetica,arial,freesans,clean,sans-serif;
+	color:black;
+	line-height:1.4em;
+	background-color: #F8F8F8;
+	padding: 0.7em;
+}
+p {
+	margin:1em 0;
+	line-height:1.5em;
+}
+table {
+	font-size:inherit;
+	font:100%;
+	margin:1em;
+}
+table th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+table td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+input[type=text],input[type=password],input[type=image],textarea{font:99% helvetica,arial,freesans,sans-serif;}
+select,option{padding:0 .25em;}
+optgroup{margin-top:.5em;}
+pre,code{font:12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;}
+pre {
+	margin:1em 0;
+	font-size:12px;
+	background-color:#eee;
+	border:1px solid #ddd;
+	padding:5px;
+	line-height:1.5em;
+	color:#444;
+	overflow:auto;
+	-webkit-box-shadow:rgba(0,0,0,0.07) 0 1px 2px inset;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;border-radius:3px;
+}
+pre code {
+	padding:0;
+	font-size:12px;
+	background-color:#eee;
+	border:none;
+}
+code {
+	font-size:12px;
+	background-color:#f8f8ff;
+	color:#444;
+	padding:0 .2em;
+	border:1px solid #dedede;
+}
+img{border:0;max-width:100%;}
+abbr{border-bottom:none;}
+a{color:#4183c4;text-decoration:none;}
+a:hover{text-decoration:underline;}
+a code,a:link code,a:visited code{color:#4183c4;}
+h2,h3{margin:1em 0;}
+h1,h2,h3,h4,h5,h6{border:0;}
+h1{font-size:170%;border-top:4px solid #aaa;padding-top:.5em;margin-top:1.5em;}
+h1:first-child{margin-top:0;padding-top:.25em;border-top:none;}
+h2{font-size:150%;margin-top:1.5em;border-top:4px solid #e0e0e0;padding-top:.5em;}
+h3{margin-top:1em;}
+hr{border:1px solid #ddd;}
+ul{margin:1em 0 1em 2em;}
+ol{margin:1em 0 1em 2em;}
+ul li,ol li{margin-top:.5em;margin-bottom:.5em;}
+ul ul,ul ol,ol ol,ol ul{margin-top:0;margin-bottom:0;}
+blockquote{margin:1em 0;border-left:5px solid #ddd;padding-left:.6em;color:#555;}
+dt{font-weight:bold;margin-left:1em;}
+dd{margin-left:2em;margin-bottom:1em;}
+@media screen and (min-width: 768px) {
+    body {
+        width: 748px;
+        margin:10px auto;
+    }
+}
+</style>
+<title>iOS 用户反馈 Release Note</title>
+</head>
+<body>
+<h1>iOS 用户反馈 Release Note</h1>
+
+<h3>版本：v1.2.1</h3>
+
+<ul>
+<li>发布日期：2012.09.19</li>
+<li>主要更新：
+
+<ol>
+<li> 增加armv7s架构，支持iOS6 , Xcode4.5.</li>
+<li> 修改main.css，兼容iOS6的webView.</li>
+<li> 取消评价默认值为3(一般).</li>
+</ol>
+</li>
+<li><p>注意：</p>
+
+<p>  支持数据API的双向反馈SDK即将推出，有此需求的用户请稍候.</p></li>
+</ul>
+
+
+<h3>版本：v1.2</h3>
+
+<ul>
+<li>发布日期：2012.04.11</li>
+<li>主要更新：
+
+<ol>
+<li> 更好的支持iOS4.</li>
+</ol>
+</li>
+</ul>
+
+
+<hr />
+
+<h3>版本：v1.1</h3>
+
+<ul>
+<li>发布日期：2012.04.01</li>
+<li>主要更新：
+
+<ol>
+<li> html5做展现，定制容易，html，css，javascript自由修改</li>
+<li> 多语言支持，需要复制<code>umFeedback.bundle</code>里的<code>chat_zh-Hans.html</code>为<code>chat_xx.html</code>(xx为语言标记,<code>en</code>,<code>ja</code>等)
+sdk自动选择适合语言的html页面，顺序为 <code>本机语言</code> > <code>英语(en)</code> > <code>简体中文(zh-Hans)</code>,
+这样可以制作完全不同风格的多国语言界面，而不限于文字上的i18n</li>
+<li> 双向,实时,反馈</li>
+<li> 数据本地缓存，未联网状态仍可以查看，发送失败下次自动发送</li>
+<li> 支持自定义数据项，详细参见main.js里的submitForm方法</li>
+</ol>
+</li>
+</ul>
+
+</body>
+</html>

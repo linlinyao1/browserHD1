@@ -1,0 +1,27 @@
+﻿@charset "utf-8";
+/* 2345网址导航pad版首页 */
+/* reset */
+body{margin:0; padding:0;font-family:\5FAE\8F6F\96C5\9ED1;background:transparent; color:#000;}
+h1,h2,h3,h4,h5,h6,p,ul,li,dl,dd,dt,span,a,textarea,header,section,nav,menu,footer,strong{margin:0;padding:0;list-style:none;}
+a{outline:none;color:#404241;text-decoration:none;color:#545454}
+a:active{color:#000;}
+img{ border:0;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*zoom:1;}
+.wrap{ margin:0 auto; width:700px}
+/* category */
+.category{ border-top:1px dashed #ccc; padding:6px 0;}
+.category dl{ height:43px; font:1em; line-height:43px;clear:both; overflow:hidden; margin-top:13px;}
+.category dt{ width:96%; float:left;  }
+.category dt a{ font-size:1em; height:30px; line-height:30px; margin-top:5px; display:inline-block;padding:0 10px; overflow:hidden;}
+.category dt a:active{ background:#dfdfdf; border-radius:7px; color:#545454;}
+.category dt strong{ display:inline-block; float:left;width:70px; text-align:center; height:41px; border:1px solid #c3c3c3; border-radius:7px 0 0 7px;background:#f2f2f2; font-size: 1.1em; box-shadow: inset  0 2px white;}
+.category dt strong a,.category dt strong a:active{ color:#60a0df; font-weight:100;} 
+.c_site{ position:relative; z-index:2; float:left;height:41px;border:1px solid #c3c3c3; border-left:0; border-radius:0 7px 7px 0; width:598px; box-shadow: inset 0 2px white;}
+.c_site_opcity{ width:597px; background:#fff; height:41px; opacity:0.3;filter:alpha(opacity=30); position:absolute; left:0; top:0; z-index:1; display:block;}
+.c_site ul{ position: relative; z-index:9;}
+.c_site li{ display:inline-block; height:41px; width:98px; text-align:center; float:left}
+.c_site li.line{ width:1px; overflow:hidden; background:#cecece; box-shadow:-1px 0 0 #fff; height:25px; margin-top:8px;}
+.category dd{ float:right; width:23px; height:43px; }
+.category dd a{ width:23px; height:23px; margin-top:10px; background-image:url(../images/more_a.png); display:inline-block;background-size:22px 23px; background-repeat:no-repeat}
+.category dd a:active{ background-image:url(../images/li_more_click.png);}
