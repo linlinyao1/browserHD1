@@ -83,9 +83,31 @@
         
         [self.scrollBoard scrollRectToVisible:self.navPage.frame animated:NO];
         
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(didRotate:)
+                                                     name:@"UIDeviceOrientationDidChangeNotification" object:nil];
     }
     return self;
 }
+
+- (void) didRotate:(NSNotification *)notification{
+//    UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+////    NSLog(@"self.scrollBoard.bounds : %@",NSStringFromCGRect(self.scrollBoard.bounds));
+//    self.scrollBoard.frame = self.bounds;
+//    self.scrollBoard.contentSize = CGSizeMake(self.scrollBoard.bounds.size.width*2, self.scrollBoard.bounds.size.height);
+//    
+//    if (self.scrollBoard.contentOffset.x>5) {
+//        if (UIInterfaceOrientationIsLandscape(orientation)) {
+//            self.scrollBoard.contentOffset = CGPointMake(self.scrollBoard.bounds.size.width, 0);
+//        }else{
+//            self.scrollBoard.contentOffset = CGPointMake(self.scrollBoard.bounds.size.width, 0);
+//        }
+//    }else{
+//        self.scrollBoard.contentOffset = CGPointMake(0, 0);
+//    }
+}
+
 
 -(void)segment:(RCSegment *)segment selectionChange:(NSInteger)newIndex
 {
@@ -114,37 +136,21 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    NSLog(@"orientation: %d,frame: %@",UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]),NSStringFromCGSize(self.scrollBoard.contentSize));
     self.scrollBoard.frame = self.bounds;
     self.scrollBoard.contentSize = CGSizeMake(self.scrollBoard.bounds.size.width*2, self.scrollBoard.bounds.size.height);
-    if (self.scrollBoard.contentOffset.x>0) {
-        self.scrollBoard.contentOffset = CGPointMake(self.scrollBoard.bounds.size.width, 0);
-    }else{
-        self.scrollBoard.contentOffset = CGPointMake(0, 0);
+//    self.favPage.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+//    self.navPage.frame = CGRectMake(self.bounds.size.width, 0, self.bounds.size.width, self.bounds.size.height);
+
+    if ([[UIDevice currentDevice] systemVersion].floatValue >= 5.0) {
+        if (self.scrollBoard.contentOffset.x>0) {
+            self.scrollBoard.contentOffset = CGPointMake(self.scrollBoard.bounds.size.width, 0);
+        }else{
+            self.scrollBoard.contentOffset = CGPointMake(0, 0);
+        }
     }
-//    self.scrollBoard.contentSize = CGSizeMake(CGRectGetMaxX(self.navPage.frame), self.bounds.size.height);
-//    NSLog(@"self.scrollBoard.contentOffset.x :%f",self.scrollBoard.contentOffset.x);
-////    if (self.scrollBoard.contentOffset.x>0) {
-////        self.scrollBoard.contentOffset = CGPointMake(self.scrollBoard.bounds.size.width, 0);
-////    }else{
-////        self.scrollBoard.contentOffset = CGPointMake(0, 0);
-////    
-//    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
-//    self.scrollBoard.frame = self.bounds;
-//
-//    if (UIDeviceOrientationIsLandscape(orientation)) {
-//        self.scrollBoard.contentSize = CGSizeMake(1024*2, self.bounds.size.height);
-//    }else{
-//        self.scrollBoard.contentSize = CGSizeMake(768*2, self.bounds.size.height);
-//    }
-//    
-//    
-//    if (self.scrollBoard.contentOffset.x>0) {
-//        self.scrollBoard.contentOffset = CGPointMake(self.scrollBoard.bounds.size.width, 0);
-//    }else{
-//        self.scrollBoard.contentOffset = CGPointMake(0, 0);
-//    }
 }
+
+
 
 -(void)quitEditng
 {
@@ -156,19 +162,18 @@
 
 -(void)relayoutWithOrientation:(UIDeviceOrientation)orientation
 {
-//    self.scrollBoard.frame = self.bounds;
-//    if (UIDeviceOrientationIsLandscape(orientation)) {
-//        self.scrollBoard.contentSize = CGSizeMake(1024*2, self.bounds.size.height);
-//    }else{
-//        self.scrollBoard.contentSize = CGSizeMake(768*2, self.bounds.size.height);
-//    }
-//    
-//    
-//    if (self.scrollBoard.contentOffset.x>0) {
-//        self.scrollBoard.contentOffset = CGPointMake(self.scrollBoard.bounds.size.width, 0);
-//    }else{
-//        self.scrollBoard.contentOffset = CGPointMake(0, 0);
-//    }
+//    [self setNeedsLayout];
+//    NSLog(@"self.scrollBoard.bounds : %@",NSStringFromCGRect(self.scrollBoard.bounds));
+//    NSLog(@"scrollView.contentOffset.x :%f",self.scrollBoard.contentOffset.x);
+//
+    self.scrollBoard.frame = self.bounds;
+    self.scrollBoard.contentSize = CGSizeMake(self.scrollBoard.bounds.size.width*2, self.scrollBoard.bounds.size.height);
+   
+    if (self.scrollBoard.contentOffset.x>5) {
+        self.scrollBoard.contentOffset = CGPointMake(self.scrollBoard.bounds.size.width, 0);
+    }else{
+        self.scrollBoard.contentOffset = CGPointMake(0, 0);
+    }
 }
 
 -(void)willMoveToSuperview:(UIView *)newSuperview
@@ -213,7 +218,7 @@
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    if (scrollView.contentOffset.x>0) {
+    if (scrollView.contentOffset.x>5) {
         [self.favPage removeFromSuperview];
         [self.segmentIndicator setSelectIndex:1];
     }else{

@@ -12,7 +12,7 @@
 @interface RCTab ()
 @property (nonatomic,assign) BOOL notFirstLoad;
 @property (nonatomic,unsafe_unretained) NSTimer *progressTimer;
-@property (nonatomic,assign) NSInteger *webLoadingCount;
+@property (nonatomic,assign) NSInteger webLoadingCount;
 
 @end
 
@@ -30,7 +30,11 @@
 @synthesize loadingProgress = _loadingProgress;
 
 
-
+-(void)setWebLoadingCount:(NSInteger )webLoadingCount
+{
+    NSLog(@"webLoadingCount: %d",webLoadingCount);
+    _webLoadingCount = webLoadingCount;
+}
 
 
 -(void)setWebView:(RCWebView *)webView
@@ -100,12 +104,21 @@
     self.closeTabButton.hidden = disable;
 }
 
+-(void)setLoadingProgress:(CGFloat)loadingProgress
+{
+    _loadingProgress = loadingProgress;
+    
+    if ([self.delegate respondsToSelector:@selector(RCTab:LoadingProgressChanged:)]) {
+        [self.delegate RCTab:self LoadingProgressChanged:self.loadingProgress];
+    }
+}
+
 
 
 -(void)handleWebFinishedLoading:(UIWebView*)webView
 {
     self.loadingProgress = 1.1; // any number lagger than 1 to make a splash
-    
+    [self performSelector:@selector(splashProgress) withObject:nil afterDelay:.1];
 //    [self.progressTimer invalidate];
 //    self.progressTimer = nil;
     
@@ -191,12 +204,16 @@
     }else if (progress < 0.82){
         self.loadingProgress += 0.01;
         self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(handleProgressTimer:) userInfo:nil repeats:YES];
+    }else if (progress>=0.82){
+        NSLog(@"timmer running");
+        [sender invalidate];
+        self.progressTimer = nil;
     }
     
     
-    if ([self.delegate respondsToSelector:@selector(RCTab:LoadingProgressChanged:)]) {
-        [self.delegate RCTab:self LoadingProgressChanged:self.loadingProgress];
-    }
+//    if ([self.delegate respondsToSelector:@selector(RCTab:LoadingProgressChanged:)]) {
+//        [self.delegate RCTab:self LoadingProgressChanged:self.loadingProgress];
+//    }
 }
 
 
@@ -220,7 +237,6 @@
     }
     self.loadingProgress = 0.15;
     self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(handleProgressTimer:) userInfo:nil repeats:YES];
-    
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(handleWebFinishedLoading:) object:webView];
 
 }
@@ -245,7 +261,10 @@
     if ([self.delegate respondsToSelector:@selector(RCTab:StartLoadingWebView:WithRequest:)]) {
             [self.delegate RCTab:self StartLoadingWebView:self.webView WithRequest:request];
     }
-    
+    NSString* title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    if (title.length) {
+        self.titleLabel.text = title;
+    }
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(handleWebFinishedLoading:) object:webView];
     return YES;
 }
@@ -261,12 +280,18 @@
     }
 }
 
+-(void)splashProgress
+{
+    self.loadingProgress = 0;
+}
+
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     self.webLoadingCount--;
     
     if (self.webLoadingCount == 0) {
         self.loadingProgress = 1.1;
+        [self performSelector:@selector(splashProgress) withObject:nil afterDelay:.1];
     }
     
     if ([self.delegate respondsToSelector:@selector(RCTab:DidFailLoadingWebView:WithErrorCode:)]) {

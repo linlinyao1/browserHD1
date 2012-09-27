@@ -43,25 +43,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "browserHD/RCViewController.m"
-         timestampString = "369833757.511615"
+         timestampString = "370410447.161393"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "1092"
-         endingLineNumber = "1092"
+         startingLineNumber = "1099"
+         endingLineNumber = "1099"
          landmarkName = "-handleHomeButtonPress:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "browserHD/RCViewController.m"
-         timestampString = "369833757.511615"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "952"
-         endingLineNumber = "952"
-         landmarkName = "-popoverControllerDidDismissPopover:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

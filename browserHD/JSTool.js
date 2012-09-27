@@ -128,3 +128,5 @@ function MyIPhoneApp_CalcLoadingProgress(){
     
     
 }
+
+function stopVideo(){ video.pause(); }

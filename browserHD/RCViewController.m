@@ -310,8 +310,9 @@
 
 -(void)didReceiveMemoryWarning
 {
-    [self.webRestorePool makeObjectsPerformSelector:@selector(stopLoading) withObject:nil];
-    [self.webRestorePool makeObjectsPerformSelector:@selector(setDelegate:) withObject:nil];
+    [self.webRestorePool removeAllObjects];
+    self.restoreTabButton.enabled = NO;
+
     [super didReceiveMemoryWarning];
 }
 
@@ -398,12 +399,13 @@
     [self homePageQuitEditingIfNeeded];
 
     if (self.webRestorePool.count>0) {
-        RCWebView *web = [self.webRestorePool lastObject];
-        self.preloadWeb = web;
-        [self.webRestorePool removeObject:web];
-        //    [self.listContent addObject:TITLE_FOR_NEWTAB];
-        //    [self.listWebViews addObject:web];
+        NSURL* url = [self.webRestorePool lastObject];
+//        RCWebView *web = [self.webRestorePool lastObject];
+        self.preloadWeb = [[RCWebView alloc] initWithFrame:self.browserView.bounds];
+        self.preloadWeb.isWebPage= YES;
+        [self.webRestorePool removeObject:url];
         [self addNewTab];
+        [self.preloadWeb loadRequest:[NSURLRequest requestWithURL:url]];
     }
     if (self.webRestorePool.count <=0) {
         self.restoreTabButton.enabled = NO;
@@ -582,17 +584,19 @@
     if (!self.webRestorePool) {
         self.webRestorePool = [NSMutableArray arrayWithCapacity:1];
     }
-    [tab.webView performSelector:@selector(reload) withObject:nil afterDelay:.1];
+//    [tab.webView stringByEvaluatingJavaScriptFromString:@"stopVideo()"];
+//    [tab.webView performSelector:@selector(reload) withObject:nil afterDelay:.1];
 //    [tab.webView loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"about:blank"]]];
     //    [tab.webView goBack];
+    if (tab.webView.isWebPage) {
+        [self.webRestorePool addObject:tab.webView.request.URL];
+        self.restoreTabButton.enabled = YES;
+    }
     
-    [self.webRestorePool addObject:tab.webView];
-    
-    self.restoreTabButton.enabled = YES;
     if (self.webRestorePool.count >= 12) {
-        RCWebView* web = [self.webRestorePool objectAtIndex:0];
-        [web stopLoading];
-        web.delegate = nil;
+//        RCWebView* web = [self.webRestorePool objectAtIndex:0];
+//        [web stopLoading];
+//        web.delegate = nil;
         [self.webRestorePool removeObjectAtIndex:0];
     }
 
@@ -639,7 +643,7 @@
 //    NSIndexPath *indexPath = [self.tabsView indexPathForView:tab];
 //    if ([indexPath isEqual:self.tabsView.selectedIndexPath]) {
     if (tab == [self currentTab]) {
-        RCTab *tab = [self currentTab];
+//        RCTab *tab = [self currentTab];
         if (tab.webView.isWebPage) {
             [self updateBackForwardButtonWithTab:tab];
             self.DashBoardUrlField.loadingProgress = [NSNumber numberWithFloat:progress];
@@ -722,6 +726,8 @@
         default:
         {
             NSLog(@"fail error: %@",error);
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:[error localizedDescription] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alert show];
             break;
         }
     }
@@ -899,7 +905,7 @@
 {
     [self homePageQuitEditingIfNeeded];
     
-    RCTab* tab = [self currentTab];
+    RCTab* tab = [self currentTab]; 
     if (tab.webView.isWebPage) {
         if (tab.webView.loading){
             [tab.webView stopLoading];

@@ -109,11 +109,13 @@
                     }
                 }
             }
+        }else{
+            NSMutableArray* historyArray = [RCRecordData recordDataWithKey:RCRD_HISTORY];
+            [historyArray sortUsingComparator:^NSComparisonResult(BookmarkObject* obj1, BookmarkObject* obj2) {
+                return [obj2.date compare:obj1.date];
+            }];
+            [tempArray addObjectsFromArray:[historyArray subarrayWithRange:NSMakeRange(0, 10)]];
         }
-        
-
-        
-        
         
         //hot sites
         NSString *hotSitesString = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"hotSites" ofType:@"json"] encoding:NSUTF8StringEncoding error:nil];
@@ -121,8 +123,6 @@
             NSArray *hotSitesArray = [hotSitesString objectFromJSONString];
             [tempArray addObjectsFromArray:hotSitesArray];
         }
-        
-        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             self.listContent = tempArray;

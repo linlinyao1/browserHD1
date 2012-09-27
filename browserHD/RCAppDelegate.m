@@ -17,18 +17,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[RCViewController alloc] initWithNibName:@"RCViewController" bundle:nil];
+
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     
-    
+    [self.viewController willAnimateRotationToInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation duration:0];
+
     //setup screen shot cache clear
 //    5056b26e52701527fe000074
     [MobClick startWithAppkey:@"5056b26e52701527fe000074" reportPolicy:REALTIME channelId:nil];
     [MobClick checkUpdate];
-//    [[MobClick class] performSelector:@selector(checkUpdate) withObject:nil afterDelay:1];
 
     
     [[RCRecordData class] performSelectorInBackground:@selector(clearImageCaches) withObject:nil];

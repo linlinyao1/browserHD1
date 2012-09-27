@@ -698,8 +698,6 @@
 		8875C35A1609912F002B8788 /* staticNavCell_BG~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "staticNavCell_BG~ipad.png"; sourceTree = "<group>"; };
 		8875C38F16099466002B8788 /* bookmark_segment1~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark_segment1~ipad.png"; sourceTree = "<group>"; };
 		8875C39016099466002B8788 /* bookmark_segment2~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark_segment2~ipad.png"; sourceTree = "<group>"; };
-		8875C39B1609BBFE002B8788 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		8875C39C1609BBFE002B8788 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/RCViewController.xib"; sourceTree = "<group>"; };
 		8875C39D1609BBFE002B8788 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		8876265C16080AA900DE3D68 /* RCFolderAddNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFolderAddNewViewController.h; path = Classes/RCBookmarkView/RCFolderAddNewViewController.h; sourceTree = "<group>"; };
 		8876265D16080AA900DE3D68 /* RCFolderAddNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCFolderAddNewViewController.m; path = Classes/RCBookmarkView/RCFolderAddNewViewController.m; sourceTree = "<group>"; };
@@ -1097,16 +1095,12 @@
 		88FB4227160B0D15003EF27F /* 隐私保护声明HD版.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "隐私保护声明HD版.txt"; sourceTree = "<group>"; };
 		88FB422B160B0DCC003EF27F /* RCPrivacyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCPrivacyViewController.h; sourceTree = "<group>"; };
 		88FB422C160B0DCC003EF27F /* RCPrivacyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCPrivacyViewController.m; sourceTree = "<group>"; };
-		88FB4231160B13C8003EF27F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/RCPrivacyViewController.xib"; sourceTree = "<group>"; };
 		88FB4233160B13CC003EF27F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RCPrivacyViewController.xib; sourceTree = "<group>"; };
 		88FB4234160B13F5003EF27F /* iPad版浏览器产品使用许可协议.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "iPad版浏览器产品使用许可协议.txt"; sourceTree = "<group>"; };
 		88FB423A160B2016003EF27F /* about2345.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about2345.png; sourceTree = "<group>"; };
 		88FB423D160B232C003EF27F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RCBookmarkPopoverViewController.xib; sourceTree = "<group>"; };
-		88FB423F160B2330003EF27F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/RCBookmarkPopoverViewController.xib"; sourceTree = "<group>"; };
 		88FB4241160B2350003EF27F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RCTab.xib; sourceTree = "<group>"; };
-		88FB4243160B2356003EF27F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/RCTab.xib"; sourceTree = "<group>"; };
 		88FB4245160B236A003EF27F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RCConfigueNavIconsViewController.xib; sourceTree = "<group>"; };
-		88FB4247160B236F003EF27F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/RCConfigueNavIconsViewController.xib"; sourceTree = "<group>"; };
 		88FCDBFA15FD8F79008F6DBE /* RCBookmarkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCBookmarkView.h; path = Classes/RCBookmarkView/RCBookmarkView.h; sourceTree = "<group>"; };
 		88FCDBFB15FD8F79008F6DBE /* RCBookmarkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RCBookmarkView.m; path = Classes/RCBookmarkView/RCBookmarkView.m; sourceTree = "<group>"; };
 		88FE88421606E92000805C96 /* RCFolderSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RCFolderSelectViewController.h; path = Classes/RCBookmarkView/RCFolderSelectViewController.h; sourceTree = "<group>"; };
@@ -2083,6 +2077,7 @@
 			knownRegions = (
 				en,
 				"zh-Hans",
+				Base,
 			);
 			mainGroup = 8849CF7D15D3A947006A42D8;
 			productRefGroup = 8849CF8915D3A947006A42D8 /* Products */;
@@ -2628,7 +2623,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				8849CF9615D3A947006A42D8 /* en */,
-				8875C39B1609BBFE002B8788 /* zh-Hans */,
 				8875C39D1609BBFE002B8788 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
@@ -2638,7 +2632,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				8849CFA215D3A947006A42D8 /* en */,
-				8875C39C1609BBFE002B8788 /* zh-Hans */,
 			);
 			name = RCViewController.xib;
 			sourceTree = "<group>";
@@ -2646,7 +2639,6 @@
 		88FB4232160B13C8003EF27F /* RCPrivacyViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				88FB4231160B13C8003EF27F /* zh-Hans */,
 				88FB4233160B13CC003EF27F /* en */,
 			);
 			name = RCPrivacyViewController.xib;
@@ -2656,7 +2648,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				88FB423D160B232C003EF27F /* en */,
-				88FB423F160B2330003EF27F /* zh-Hans */,
 			);
 			name = RCBookmarkPopoverViewController.xib;
 			path = Classes/RCBookmarkView;
@@ -2666,7 +2657,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				88FB4241160B2350003EF27F /* en */,
-				88FB4243160B2356003EF27F /* zh-Hans */,
 			);
 			name = RCTab.xib;
 			path = Classes/RCTabsView;
@@ -2676,7 +2666,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				88FB4245160B236A003EF27F /* en */,
-				88FB4247160B236F003EF27F /* zh-Hans */,
 			);
 			name = RCConfigueNavIconsViewController.xib;
 			sourceTree = "<group>";
@@ -2744,7 +2733,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "browserHD/browserHD-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
